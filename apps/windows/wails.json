@@ -1,0 +1,17 @@
+{
+  "$schema": "https://wails.io/schemas/config.v2.json",
+  "name": "HermesVPN Connect",
+  "outputfilename": "HermesVPN-Connect",
+  "frontend:install": "",
+  "frontend:build": "",
+  "frontend:dir": "frontend",
+  "assetdir": "frontend/dist",
+  "author": {"name": "HermesVPN"},
+  "info": {
+    "companyName": "HermesVPN",
+    "productName": "HermesVPN Connect",
+    "productVersion": "1.0.25",
+    "copyright": "HermesVPN",
+    "comments": "HermesVPN Connect for Windows"
+  }
+}

@@ -1,0 +1,5 @@
+[Unit]
+Description=HermesVPN weekend 20% festival (guarantee, independent of Hetzner)
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /usr/local/bin/hermesvpn-weekend-sale.py

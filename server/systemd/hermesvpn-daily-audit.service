@@ -1,0 +1,7 @@
+[Unit]
+Description=HermesVPN daily financial reconciliation
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /usr/local/bin/hermesvpn-daily-audit.py

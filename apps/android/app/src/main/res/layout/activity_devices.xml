@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="@color/background">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical"
+        android:paddingStart="16dp" android:paddingEnd="16dp" android:paddingTop="14dp" android:paddingBottom="8dp">
+        <ImageButton android:id="@+id/backButton" android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/bg_chip"
+            android:padding="8dp" android:src="@drawable/ic_back" android:contentDescription="Back" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp"
+            android:text="@string/dev_screen" android:textColor="@color/text_primary" android:textSize="20sp" android:textStyle="bold" />
+    </LinearLayout>
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:scrollbars="none">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical"
+            android:paddingStart="20dp" android:paddingEnd="20dp" android:paddingBottom="28dp">
+
+            <include layout="@layout/view_devices_promo" />
+
+            <!-- Windows -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical"
+                android:background="@drawable/bg_glass_card" android:padding="18dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                    <ImageView android:layout_width="26dp" android:layout_height="26dp" android:src="@drawable/ic_windows_logo" android:importantForAccessibility="no" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="10dp"
+                        android:text="@string/dev_windows_title" android:textColor="@color/text_primary" android:textSize="17sp" android:textStyle="bold" />
+                </LinearLayout>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp"
+                    android:text="@string/dev_windows_hint" android:textColor="@color/text_secondary" android:textSize="13.5sp" android:lineSpacingMultiplier="1.25" />
+                <TextView android:id="@+id/windowsLinkText" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_ping_badge" android:padding="10dp" android:textColor="@color/text_primary" android:textSize="12sp"
+                    android:textDirection="ltr" android:textIsSelectable="true" />
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="12dp">
+                    <com.google.android.material.button.MaterialButton android:id="@+id/sendToPcButton" android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="@string/dev_send_to_pc" app:cornerRadius="14dp" xmlns:app="http://schemas.android.com/apk/res-auto" />
+                    <com.google.android.material.button.MaterialButton android:id="@+id/copyWindowsButton" style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="10dp"
+                        android:text="@string/dev_copy" app:cornerRadius="14dp" xmlns:app="http://schemas.android.com/apk/res-auto" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Android (this phone) -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="14dp"
+                android:background="@drawable/bg_glass_card" android:padding="18dp" android:gravity="center_horizontal">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                    <ImageView android:layout_width="26dp" android:layout_height="26dp" android:src="@drawable/ic_android_logo" android:importantForAccessibility="no" />
+                    <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:layout_marginStart="10dp"
+                        android:text="@string/dev_android_title" android:textColor="@color/text_primary" android:textSize="17sp" android:textStyle="bold" />
+                    <TextView android:id="@+id/installedText" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:textColor="@color/connected" android:textSize="12sp" />
+                </LinearLayout>
+                <ImageView android:id="@+id/androidQr" android:layout_width="180dp" android:layout_height="180dp" android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_qr" android:padding="10dp" android:importantForAccessibility="no" />
+                <com.google.android.material.button.MaterialButton android:id="@+id/copyAndroidButton" style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp"
+                    android:text="@string/dev_copy" app:cornerRadius="14dp" xmlns:app="http://schemas.android.com/apk/res-auto" />
+            </LinearLayout>
+
+            <!-- Share -->
+            <TextView style="@style/SettingsSectionLabel" android:layout_marginTop="22dp" android:text="@string/dev_share_title" />
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical"
+                android:background="@drawable/bg_glass_card" android:padding="18dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/dev_share_hint"
+                    android:textColor="@color/text_secondary" android:textSize="13.5sp" />
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="12dp">
+                    <TextView android:id="@+id/shareTelegram" android:layout_width="0dp" android:layout_weight="1" android:layout_height="48dp" android:gravity="center"
+                        android:background="@drawable/bg_share_tg" android:drawableStart="@drawable/ic_telegram" android:drawableTint="#FFFFFF" android:drawablePadding="6dp"
+                        android:paddingStart="12dp" android:paddingEnd="12dp" android:text="@string/dev_share_telegram" android:textColor="#FFFFFF" android:textStyle="bold" />
+                    <TextView android:id="@+id/shareWhatsapp" android:layout_width="0dp" android:layout_weight="1" android:layout_height="48dp" android:gravity="center"
+                        android:layout_marginStart="8dp" android:background="@drawable/bg_share_wa" android:drawableStart="@drawable/ic_whatsapp" android:drawablePadding="6dp"
+                        android:paddingStart="12dp" android:paddingEnd="12dp" android:text="@string/dev_share_whatsapp" android:textColor="#FFFFFF" android:textStyle="bold" />
+                    <TextView android:id="@+id/shareMore" android:layout_width="0dp" android:layout_weight="1" android:layout_height="48dp" android:gravity="center"
+                        android:layout_marginStart="8dp" android:background="@drawable/bg_glass_card" android:drawableStart="@drawable/ic_share" android:drawableTint="@color/text_primary"
+                        android:drawablePadding="6dp" android:paddingStart="12dp" android:paddingEnd="12dp" android:text="@string/dev_share_more"
+                        android:textColor="@color/text_primary" android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

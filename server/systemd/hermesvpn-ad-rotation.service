@@ -1,0 +1,7 @@
+[Unit]
+Description=HermesVPN ad rotation (one poster per day to the channel)
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /usr/local/bin/hermesvpn-ad-rotation.py

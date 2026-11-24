@@ -1,0 +1,7 @@
+[Unit]
+Description=Hourly AI usage export
+[Timer]
+OnCalendar=*:05
+Persistent=true
+[Install]
+WantedBy=timers.target

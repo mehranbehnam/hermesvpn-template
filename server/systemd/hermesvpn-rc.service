@@ -1,0 +1,17 @@
+[Unit]
+Description=HermesVPN Claude Code Remote Control (tmux hermesvpn-rc, self-healing loop)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+User=ubuntu
+Group=ubuntu
+Environment=HOME=/home/ubuntu
+WorkingDirectory=/home/ubuntu/hermesvpn
+ExecStart=/home/ubuntu/.local/bin/hermesvpn-rc-start
+ExecStop=/usr/bin/tmux kill-session -t hermesvpn-rc
+
+[Install]
+WantedBy=multi-user.target

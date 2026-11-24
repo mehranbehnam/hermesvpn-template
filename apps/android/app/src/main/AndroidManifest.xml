@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- برای نصب فایل به‌روزرسانی از داخل خود اپ -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+    <!-- برای دکمه‌ی «انتخاب از گالری» توی صفحه‌ی اسکن QR (خودِ کتابخانه‌ی zxing) -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+
+    <!-- برای تشخیص نصب‌بودن تلگرام (Android 11+ بدون این، حتی اگه نصب باشه دیده نمی‌شه) -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="tg" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" android:host="t.me" />
+        </intent>
+        <!-- برای صفحه‌ی «جداسازی تونلینگ» — دیدن لیست اپ‌های قابل‌بازکردن -->
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+    </queries>
+
+    <application
+        android:usesCleartextTraffic="true"
+        android:name=".HermesApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.HermesVpn"
+        android:supportsRtl="true">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".ConfigsActivity"
+            android:exported="false"
+            android:launchMode="singleTop" />
+
+        <!-- ورود یک‌ضربه‌ای از دکمه‌ی «اتصال به نرم‌افزار» در ربات تلگرام.
+
+        App Link تأییدشده‌ست (autoVerify): اندروید موقع نصب
+        https://app.example.com/.well-known/assetlinks.json رو می‌خونه و
+        چون امضای همین اپ اون‌جا ثبت شده، لینک رو بدون مرورگر و بدون پنجره‌ی
+        انتخاب مستقیم به اپ می‌ده. اگه اپ نصب نباشه همون URL توی مرورگر باز
+        می‌شه و صفحه‌ش لینک دانلود اپ رو نشون می‌ده.
+
+        طرحِ hermesvpn:// هم به‌عنوان پشتیبان هست، برای حالتی که اپ جانبی نصب
+        شده و تأیید خودکار انجام نشده. -->
+        <activity
+            android:name=".DeepLinkActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait">
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https"
+                    android:host="app.example.com"
+                    android:pathPrefix="/open" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="hermesvpn" android:host="connect" />
+                <data android:scheme="hermesvpn" android:host="import" />
+            </intent-filter>
+            <!-- خودِ لینک اتصال. بعضی اپ‌ها/مرورگرها vless:// را قابل کلیک
+            می‌کنند؛ آن‌جا مستقیم همین صفحه باز و کانفیگ وارد می‌شود. -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="vless" />
+            </intent-filter>
+            <!-- مسیر اضطراری: لینک hvpn:// و فایل .hvpn (تلگرام/بله فایل ناشناخته را
+            octet-stream می‌دهند؛ اپ فقط فایل‌هایی را می‌پذیرد که با HVPN1 شروع شوند) -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="hvpn" />
+            </intent-filter>
+            <intent-filter android:label="HermesVPN">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="content" />
+                <data android:scheme="file" />
+                <data android:mimeType="application/octet-stream" />
+                <data android:mimeType="application/x-hvpn" />
+                <data android:mimeType="application/hvpn" />
+            </intent-filter>
+        </activity>
+
+        <!-- صفحه‌ی اسکن QR اختصاصی (نه CaptureActivity خودِ zxing — اون از
+        Activity ساده ارث می‌بره و نمی‌شد باهاش registerForActivityResult
+        برای دکمه‌ی گالری استفاده کرد). عمداً روی portrait قفل شده. -->
+        <activity
+            android:name=".QrScanActivity"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+
+
+
+        <activity
+            android:name=".SubscriptionInfoActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".AuthActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".TunnelSettingsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".DnsSettingsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".RouteSettingsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".SubscriptionSettingsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".SpeedTestActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".DevicesActivity"
+            android:exported="false" />
+
+
+
+        <activity
+            android:name=".AppearanceActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".AboutActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".AppExclusionActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".PurchaseActivity"
+            android:exported="false" />
+
+        <service
+            android:name=".HermesVpnService"
+            android:permission="android.permission.BIND_VPN_SERVICE"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="vpn-tunnel" />
+            <intent-filter>
+                <action android:name="android.net.VpnService" />
+            </intent-filter>
+        </service>
+
+    
+        <activity
+            android:name=".UpdateActivity"
+            android:exported="false"
+            android:label="@string/update_check_menu"
+            android:theme="@style/Theme.HermesVpn" />
+
+        <!-- فایل APK دانلودشده را فقط به نصب‌کننده‌ی اندروید می‌دهد؛
+             در حافظه‌ی عمومی نمی‌نشیند تا بین دانلود و نصب دست‌کاری نشود. -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+    </application>
+</manifest>

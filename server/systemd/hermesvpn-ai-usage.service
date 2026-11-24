@@ -1,0 +1,5 @@
+[Unit]
+Description=Export HermesVPN admin-bot AI usage aggregate
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/hermesvpn-ai-usage-export.py

@@ -1,0 +1,10 @@
+[Unit]
+Description=Run HermesVPN daily financial reconciliation once every 24h
+
+[Timer]
+# Server clock is UTC; 20:25 UTC = 23:55 Iran time (UTC+3:30), i.e. end of day
+OnCalendar=*-*-* 20:25:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

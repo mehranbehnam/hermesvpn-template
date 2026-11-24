@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- همون کره‌ی سه‌بعدی، سرد و خاموش — حالت قطع -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <gradient
+                android:type="radial" android:gradientRadius="74%"
+                android:centerX="0.34" android:centerY="0.28"
+                android:startColor="#B3DAE8"
+                android:centerColor="#1C6D93"
+                android:endColor="#03192C" />
+            <stroke android:width="1.5dp" android:color="#6699C2D8" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="oval">
+            <gradient
+                android:type="radial" android:gradientRadius="36%"
+                android:centerX="0.50" android:centerY="0.82"
+                android:startColor="#3D4196C4"
+                android:centerColor="#164196C4"
+                android:endColor="#004196C4" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="oval">
+            <gradient
+                android:type="radial" android:gradientRadius="27%"
+                android:centerX="0.36" android:centerY="0.25"
+                android:startColor="#66FFFFFF"
+                android:centerColor="#1AFFFFFF"
+                android:endColor="#00FFFFFF" />
+        </shape>
+    </item>
+</layer-list>

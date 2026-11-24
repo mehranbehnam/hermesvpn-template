@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- صفحه‌ی اصلی: نقشه‌ی جهانِ تمام‌صفحه به‌عنوان پس‌زمینه، کره‌ی سه‌بعدی اتصال،
+موقعیت واقعی سرور، شمارنده‌ی واقعیِ مدت اتصال، و نمودار/اعداد سرعتِ زنده‌ی Xray.
+رنگ‌ها عمداً ثابت (نه از تم) هستن، چون پس‌زمینه در هر حالتی تصویرِ تیره‌ی نقشه‌ست. -->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#050B14">
+
+    <com.hermesvpn.app.NetworkMapView
+        android:id="@+id/networkMapView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <View
+        android:id="@+id/homeScrim"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_home_scrim"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ================= نوار بالا ================= -->
+
+    <ImageView
+        android:id="@+id/appLogo"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:src="@mipmap/ic_launcher"
+        android:contentDescription="@string/app_name"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/appTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textColor="#FFFFFF"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        android:shadowColor="#CC000000"
+        android:shadowDx="0"
+        android:shadowDy="1"
+        android:shadowRadius="6"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toTopOf="@id/appLogo"
+        app:layout_constraintBottom_toBottomOf="@id/appLogo"
+        app:layout_constraintStart_toEndOf="@id/appLogo" />
+
+    <LinearLayout
+        android:id="@+id/settingsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:layout_marginEnd="14dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintTop_toTopOf="@id/appLogo"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:src="@drawable/ic_settings"
+            android:contentDescription="@string/settings_title"
+            app:tint="#FFFFFF" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_title"
+            android:textColor="#D9FFFFFF"
+            android:textSize="11sp"
+            android:layout_marginTop="2dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/buyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:layout_marginEnd="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintTop_toTopOf="@id/appLogo"
+        app:layout_constraintEnd_toStartOf="@id/settingsButton">
+
+        <ImageView
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:src="@drawable/ic_cart"
+            android:contentDescription="@string/home_store"
+            app:tint="#FFFFFF" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/home_store"
+            android:textColor="#D9FFFFFF"
+            android:textSize="11sp"
+            android:layout_marginTop="2dp" />
+    </LinearLayout>
+
+    <!-- ================= کره‌ی اتصال ================= -->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/orbGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.235" />
+
+    <!-- اندازه‌ها عمداً درصدی از عرضِ صفحه‌ان (نه dp ثابت): با dp ثابت روی
+    گوشی‌های پرچگالی کره غول‌پیکر می‌شد و می‌افتاد روی نشانگر آلمانِ نقشه. -->
+    <View
+        android:id="@+id/orbGlow"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_orb_glow"
+        app:layout_constraintWidth_percent="0.60"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toTopOf="@id/orbGuide"
+        app:layout_constraintBottom_toBottomOf="@id/orbGuide"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <View
+        android:id="@+id/orbRing3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_orb_ring"
+        android:alpha="0.35"
+        app:layout_constraintWidth_percent="0.50"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toTopOf="@id/orbGuide"
+        app:layout_constraintBottom_toBottomOf="@id/orbGuide"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <View
+        android:id="@+id/orbRing2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_orb_ring_soft"
+        android:alpha="0.55"
+        app:layout_constraintWidth_percent="0.42"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toTopOf="@id/orbGuide"
+        app:layout_constraintBottom_toBottomOf="@id/orbGuide"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- حلقه‌های تپنده: فقط وقتی واقعاً وصلیم انیمیت می‌شن -->
+    <View
+        android:id="@+id/pulseRingOuter"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_orb_ring"
+        android:alpha="0"
+        app:layout_constraintWidth_percent="0.42"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toTopOf="@id/orbGuide"
+        app:layout_constraintBottom_toBottomOf="@id/orbGuide"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <View
+        android:id="@+id/pulseRingInner"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_orb_ring"
+        android:alpha="0"
+        app:layout_constraintWidth_percent="0.36"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toTopOf="@id/orbGuide"
+        app:layout_constraintBottom_toBottomOf="@id/orbGuide"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/connectButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_connect_orb_off"
+        android:gravity="center"
+        android:text="@string/btn_connect"
+        android:textColor="#FFFFFF"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        android:shadowColor="#B3000B1A"
+        android:shadowDx="0"
+        android:shadowDy="2"
+        android:shadowRadius="8"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintWidth_percent="0.34"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toTopOf="@id/orbGuide"
+        app:layout_constraintBottom_toBottomOf="@id/orbGuide"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ================= موقعیت و مدت اتصال ================= -->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/infoGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.505" />
+
+    <TextView
+        android:id="@+id/locationLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/home_current_location"
+        android:textColor="#A6C4D6"
+        android:textSize="15sp"
+        android:shadowColor="#CC000000"
+        android:shadowDx="0"
+        android:shadowDy="1"
+        android:shadowRadius="6"
+        app:layout_constraintTop_toTopOf="@id/infoGuide"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/currentLocationText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:maxWidth="300dp"
+        android:textColor="#FFFFFF"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:shadowColor="#CC000000"
+        android:shadowDx="0"
+        android:shadowDy="1"
+        android:shadowRadius="8"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/locationLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- مدت اتصال واقعی — از لحظه‌ی واقعیِ برقراری تونل در HermesVpnService -->
+    <TextView
+        android:id="@+id/connectionDurationText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:00:00"
+        android:textColor="#6FE3FF"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        android:fontFamily="monospace"
+        android:letterSpacing="0.04"
+        android:shadowColor="#8034C8F0"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="16"
+        android:visibility="invisible"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@id/currentLocationText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ================= نمودار و اعداد زنده‌ی Xray ================= -->
+
+    <com.hermesvpn.app.SpeedGraphView
+        android:id="@+id/speedGraphView"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="6dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/statsPanel" />
+
+    <LinearLayout
+        android:id="@+id/statsPanel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_stats_panel"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_download_speed"
+                android:textColor="#9FB8C9"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/downloadSpeedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 B/s"
+                android:textColor="#8EE9FF"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                android:layout_marginTop="3dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="34dp"
+            android:layout_gravity="center_vertical"
+            android:background="#1FFFFFFF" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_upload_speed"
+                android:textColor="#9FB8C9"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/uploadSpeedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 B/s"
+                android:textColor="#B9A4FF"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                android:layout_marginTop="3dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="34dp"
+            android:layout_gravity="center_vertical"
+            android:background="#1FFFFFFF" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_ping"
+                android:textColor="#9FB8C9"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/pingText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="--"
+                android:textColor="#FFFFFF"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                android:layout_marginTop="3dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <include
+        android:id="@+id/bottomNav"
+        layout="@layout/bottom_nav"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

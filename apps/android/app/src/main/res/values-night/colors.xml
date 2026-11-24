@@ -1,0 +1,25 @@
+<resources>
+    <!-- پالت تاریک/میدنایت — همون اسم رنگ‌های حالت روشن، مقدار متفاوت -->
+    <color name="primary">#0A84FF</color>
+    <color name="primary_light">#409CFF</color>
+    <color name="primary_dark">#0060DF</color>
+    <color name="connected">#30D158</color>
+    <color name="disconnected">#8E8E93</color>
+    <color name="danger">#FF453A</color>
+
+    <color name="background">#000814</color>
+    <color name="gradient_top">#123A66</color>
+    <color name="gradient_bottom">#000814</color>
+    <color name="map_dot_tint">#665AC8FA</color>
+    <color name="surface">#0D1B2A</color>
+    <color name="surface_glass">#CC0D1B2A</color>
+    <color name="separator">#1C2A3A</color>
+
+    <color name="text_primary">#F2F2F7</color>
+    <color name="text_secondary">#9BA6B4</color>
+    <color name="text_on_primary">#FFFFFF</color>
+
+    <color name="silver_1">#13233A</color>
+    <color name="silver_2">#0D1B2A</color>
+    <color name="silver_3">#2C3E52</color>
+</resources>

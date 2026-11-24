@@ -1,0 +1,6 @@
+[Unit]
+Description=HermesVPN health monitor
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/hermesvpn-monitor.py

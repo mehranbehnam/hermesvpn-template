@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- دکمه‌ی گرد براق: گرادیان + هایلایت شیشه‌ای بالا -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <gradient
+                android:type="linear"
+                android:angle="135"
+                android:startColor="@color/primary_light"
+                android:endColor="@color/primary_dark" />
+        </shape>
+    </item>
+    <item android:top="6dp" android:left="18dp" android:right="18dp" android:bottom="70dp">
+        <shape android:shape="oval">
+            <solid android:color="#33FFFFFF" />
+        </shape>
+    </item>
+</layer-list>

@@ -1,0 +1,25 @@
+<resources>
+    <!-- پالت روشن/نقره‌ای الهام‌گرفته از iOS -->
+    <color name="primary">#0A84FF</color>
+    <color name="primary_light">#5AC8FA</color>
+    <color name="primary_dark">#0060DF</color>
+    <color name="connected">#34C759</color>
+    <color name="disconnected">#8E8E93</color>
+    <color name="danger">#FF3B30</color>
+
+    <color name="background">#F2F2F7</color>
+    <color name="gradient_top">#D6E8FF</color>
+    <color name="gradient_bottom">#F2F2F7</color>
+    <color name="map_dot_tint">#4D5C9CE8</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="surface_glass">#F2FFFFFF</color>
+    <color name="separator">#E5E5EA</color>
+
+    <color name="text_primary">#1C1C1E</color>
+    <color name="text_secondary">#8E8E93</color>
+    <color name="text_on_primary">#FFFFFF</color>
+
+    <color name="silver_1">#FFFFFF</color>
+    <color name="silver_2">#EFEFF4</color>
+    <color name="silver_3">#D1D1D6</color>
+</resources>

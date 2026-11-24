@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_import_uri_clipboard"
+        android:icon="@drawable/ic_copy"
+        android:title="@string/add_menu_uri_clipboard" />
+    <item
+        android:id="@+id/action_import_json_clipboard"
+        android:icon="@drawable/ic_copy"
+        android:title="@string/add_menu_json_clipboard" />
+    <item
+        android:id="@+id/action_import_v2box_file"
+        android:icon="@drawable/ic_file"
+        android:title="@string/add_menu_v2box_file" />
+    <item
+        android:id="@+id/action_add_subscription"
+        android:icon="@drawable/ic_list"
+        android:title="@string/add_menu_subscription" />
+    <item
+        android:id="@+id/action_add_manual"
+        android:icon="@drawable/ic_list"
+        android:title="@string/add_menu_manual">
+        <menu>
+            <item
+                android:id="@+id/action_manual_vless"
+                android:title="VLESS" />
+            <item
+                android:id="@+id/action_manual_trojan"
+                android:title="Trojan" />
+            <item
+                android:id="@+id/action_manual_shadowsocks"
+                android:title="Shadowsocks" />
+            <item
+                android:id="@+id/action_manual_socks"
+                android:title="SOCKS" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/action_update_all_subscriptions"
+        android:icon="@drawable/ic_refresh"
+        android:title="@string/add_menu_update_all" />
+</menu>

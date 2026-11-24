@@ -1,0 +1,5 @@
+[Unit]
+Description=HermesVPN delayed-start expiry sync
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /usr/local/bin/hermesvpn-delayed-sync.py

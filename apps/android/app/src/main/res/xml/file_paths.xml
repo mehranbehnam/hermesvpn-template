@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- فایل APK به‌روزرسانی داخل پوشه‌ی خصوصی خود اپ می‌نشیند؛ فقط همین یک مسیر
+     به نصب‌کننده‌ی اندروید داده می‌شود، نه کل حافظه. -->
+<paths>
+    <external-files-path name="updates" path="updates/" />
+</paths>

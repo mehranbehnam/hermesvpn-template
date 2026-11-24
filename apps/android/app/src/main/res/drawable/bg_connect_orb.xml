@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- کره‌ی اتصال با حسِ سه‌بعدیِ واقعی. همه‌ی لایه‌ها گرادیانِ شعاعیِ درصدی‌اند
+تا در هر اندازه‌ی صفحه‌ای دقیقاً همون نورپردازی رو بدن:
+  ۱) بدنه: نور از بالا-چپ، تاریکیِ عمیق پایین-راست + لبه‌ی درخشان
+  ۲) نورِ بازتابی از کف کره — همونیه که کره رو «گرد» نشون می‌ده نه دیسکِ تخت
+  ۳) هایلایتِ براقِ شیشه‌ای بالا -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <gradient
+                android:type="radial" android:gradientRadius="74%"
+                android:centerX="0.34" android:centerY="0.28"
+                android:startColor="#DCF8FF"
+                android:centerColor="#2BA6DF"
+                android:endColor="#04203A" />
+            <stroke android:width="1.5dp" android:color="#A6C4EEFF" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="oval">
+            <gradient
+                android:type="radial" android:gradientRadius="36%"
+                android:centerX="0.50" android:centerY="0.82"
+                android:startColor="#6656DCFF"
+                android:centerColor="#2656DCFF"
+                android:endColor="#0056DCFF" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="oval">
+            <gradient
+                android:type="radial" android:gradientRadius="27%"
+                android:centerX="0.36" android:centerY="0.25"
+                android:startColor="#99FFFFFF"
+                android:centerColor="#2BFFFFFF"
+                android:endColor="#00FFFFFF" />
+        </shape>
+    </item>
+</layer-list>

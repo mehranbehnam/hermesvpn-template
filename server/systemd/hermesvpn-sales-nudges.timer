@@ -1,0 +1,7 @@
+[Unit]
+Description=Run HermesVPN sales nudges every 30 minutes (owner approved 2026-10-24)
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=30min
+[Install]
+WantedBy=timers.target

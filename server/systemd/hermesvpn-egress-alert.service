@@ -1,0 +1,6 @@
+[Unit]
+Description=HermesVPN monthly egress traffic alert (Oracle free 10 TB)
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /usr/local/bin/hermesvpn-egress-alert.py

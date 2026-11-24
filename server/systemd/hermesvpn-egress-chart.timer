@@ -1,0 +1,9 @@
+[Unit]
+Description=Weekly traffic chart every Friday 10:00 Tehran (06:30 UTC)
+
+[Timer]
+OnCalendar=Fri *-*-* 06:30:00 UTC
+Persistent=true
+
+[Install]
+WantedBy=timers.target

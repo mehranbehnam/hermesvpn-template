@@ -1,0 +1,16 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- DayNight: پیرو نایت‌مود انتخابی کاربر (روشن/تاریک/خودکار) — HermesApplication
+    تصمیم رو موقع بالا اومدن اپ با AppCompatDelegate.setDefaultNightMode می‌گیره. -->
+    <style name="Theme.HermesVpn" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/background</item>
+        <item name="colorAccent">@color/primary</item>
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">@color/background</item>
+        <item name="android:fontFamily">@font/inter</item>
+        <item name="fontFamily">@font/inter</item>
+        <!-- اندروید ۱۲+: صفحه‌ی شروع سیستم هم‌رنگ صفحه‌ی شروع خودمان، تا گذر نرم باشد -->
+        <item name="android:windowSplashScreenBackground" tools:targetApi="31">#050B14</item>
+    </style>
+</resources>

@@ -1,0 +1,7 @@
+[Unit]
+Description=Hourly at :07 divar fallback check
+[Timer]
+OnCalendar=*-*-* *:07:00
+Persistent=false
+[Install]
+WantedBy=timers.target

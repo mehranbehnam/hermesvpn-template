@@ -1,0 +1,7 @@
+[Unit]
+Description=HermesVPN divar ads fallback sender (posts only if Hetzner primary did not)
+After=network-online.target
+[Service]
+Type=oneshot
+ExecStart=/opt/hermesvpn-divar/divar_fallback.py run
+TimeoutStartSec=300

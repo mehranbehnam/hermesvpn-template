@@ -1,0 +1,29 @@
+# secrets / private data — never commit
+.env
+*.key
+*.pem
+*.jks
+*.keystore
+keystore.properties
+local.properties
+.secrets/
+.keys/
+engine/tunnel/engine/keys_embed.go
+*.db
+*.sqlite*
+*-token
+*-offset
+*.log
+backups/
+# build output / large binaries (download or build them, see README)
+build/
+!apps/windows/build/
+apps/windows/build/bin/
+apps/windows/build/installer/*.exe
+apps/windows/resources/**/*.gz
+apps/android/app/libs/*.aar
+apps/android/app/src/main/jniLibs/
+.gradle/
+node_modules/
+*.apk
+*.exe

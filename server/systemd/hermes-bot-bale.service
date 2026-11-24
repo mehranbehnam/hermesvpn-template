@@ -1,0 +1,14 @@
+[Unit]
+Description=Hermes VPN admin bot — Bale mode (@YourBaleAdminBot, safe/scrubbed; owner 2026-11-20)
+After=network.target
+
+[Service]
+Type=simple
+Environment=HERMES_BALE_MODE=1
+ExecStart=/usr/bin/python3 /usr/local/bin/hermes-bot.py
+Restart=always
+RestartSec=10s
+User=root
+
+[Install]
+WantedBy=multi-user.target

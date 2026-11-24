@@ -1,0 +1,328 @@
+<resources>
+    <string name="app_name">HermesVPN Connect</string>
+    <string name="app_tagline">Fast. Private. Reliable.</string>
+
+    <string name="status_disconnected">Not Connected</string>
+    <string name="status_connecting">Connecting…</string>
+    <string name="status_connected">Connected</string>
+    <string name="status_fetching">Fetching configuration…</string>
+    <string name="label_download">Download</string>
+    <string name="label_upload">Upload</string>
+    <string name="label_ping">Ping</string>
+
+    <string name="btn_connect">Connect</string>
+    <string name="btn_disconnect">Disconnect</string>
+
+    <string name="server_main">Standard</string>
+    <string name="server_reality">Fast &amp; Resilient</string>
+    <string name="server_label">Server</string>
+
+    <string name="error_no_link">Enter your account ID or subscription link first</string>
+    <string name="error_config">Could not read connection settings</string>
+    <string name="error_network">Could not reach the server</string>
+    <string name="error_not_found">This account ID was not found</string>
+    <string name="error_invalid_credentials">Incorrect username or password</string>
+    <string name="error_blocked">This account has been suspended</string>
+    <string name="error_expired">This account has expired</string>
+    <string name="msg_vpn_permission_denied">VPN permission is required to connect</string>
+
+    <string name="settings_title">Settings</string>
+    <string name="settings_account_section">Account</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="btn_login">Log In</string>
+    <string name="login_success_toast">Logged in ✓</string>
+    <string name="settings_account_advanced">Or use your account ID / subscription link instead</string>
+    <string name="hint_account_id">Account ID or subscription link</string>
+    <string name="btn_save">Save</string>
+    <string name="saved_toast">Saved</string>
+
+    <string name="settings_server_section">Connection Mode</string>
+    <string name="settings_server_hint">\"Fast &amp; Resilient\" bypasses extra filtering layers and usually performs better.</string>
+
+    <string name="settings_language_section">Language</string>
+    <string name="lang_english">English</string>
+    <string name="lang_persian">فارسی</string>
+
+    <string name="settings_theme_section">Appearance</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Midnight</string>
+    <string name="theme_system">System</string>
+
+    <string name="settings_telegram_section">Telegram Proxy</string>
+    <string name="settings_telegram_hint">This only helps the Telegram app connect if it\'s blocked — it does not tunnel other apps\' traffic. Paste a proxy link (tg://proxy?...) shared by a Telegram channel.</string>
+    <string name="hint_telegram_proxy">tg://proxy?server=…</string>
+    <string name="btn_open_telegram">Open in Telegram</string>
+    <string name="error_bad_proxy_link">This doesn\'t look like a Telegram proxy link</string>
+    <string name="error_telegram_not_installed">Telegram is not installed</string>
+
+    <string name="settings_advanced_section">Advanced</string>
+    <string name="settings_bypass_lan">Bypass LAN traffic</string>
+    <string name="settings_bypass_lan_hint">Local network devices (printers, smart TVs, routers) stay reachable outside the tunnel.</string>
+    <string name="settings_custom_dns">Tunnel DNS server</string>
+    <string name="settings_unmetered_hint">Treat tunnel as unmetered</string>
+    <string name="settings_unmetered_hint_desc">Prevents apps from restricting background data or downloads over this VPN as if it were mobile data.</string>
+    <string name="settings_screenshot_protection">Screenshot protection</string>
+    <string name="settings_screenshot_protection_hint">Blocks screenshots and the app preview in the recent-apps list.</string>
+    <string name="settings_app_exclusions">Split tunneling (excluded apps)</string>
+    <string name="settings_system_vpn_settings">Always-on &amp; kill switch (Android settings)</string>
+    <string name="app_exclusion_title">Split Tunneling</string>
+    <string name="app_exclusion_hint">Exclusion: selected apps bypass the tunnel. Inclusion: only selected apps go through the tunnel.</string>
+    <string name="app_exclusion_search">Search apps…</string>
+    <string name="tunnel_mode_exclude">Exclusion (bypass selected apps)</string>
+    <string name="tunnel_mode_include">Inclusion (tunnel only selected apps)</string>
+
+    <string name="purchase_title">Buy / Renew</string>
+    <string name="purchase_step_plan">1. Choose a plan</string>
+    <string name="purchase_step_method">2. Choose a payment method</string>
+    <string name="purchase_step_details">3. Payment details</string>
+    <string name="purchase_loading">Loading plans…</string>
+    <string name="purchase_continue">Continue</string>
+    <string name="purchase_method_card">💳 Card to Card (Iran)</string>
+    <string name="purchase_method_crypto">💎 Crypto (USDT)</string>
+    <string name="purchase_method_bank_try">🇹🇷 Bank Transfer (Turkey)</string>
+    <string name="purchase_method_gateway">🏦 Card Payment (auto)</string>
+    <string name="purchase_copy">Copy details</string>
+    <string name="purchase_copied_toast">Copied</string>
+    <string name="purchase_open_gateway">Open Payment Page</string>
+    <string name="purchase_upload_receipt">📎 Upload Receipt</string>
+    <string name="purchase_check_status">Check Status</string>
+    <string name="purchase_gateway_unavailable">This payment method isn\'t active yet — try another one.</string>
+    <string name="purchase_receipt_uploading">Uploading…</string>
+    <string name="purchase_error_generic">Something went wrong. Try again.</string>
+    <string name="purchase_menu_item">🛒 Buy / Renew Plan</string>
+
+    <string name="settings_about_section">About</string>
+    <string name="settings_privacy_policy">Privacy Policy</string>
+    <string name="settings_version">Version</string>
+
+    <string name="telegram_channel_row">Telegram Channel</string>
+
+    <string name="btn_register">Register</string>
+    <string name="btn_logout">Log Out</string>
+    <string name="btn_forgot_password">Forgot password?</string>
+    <string name="account_logged_out_hint">Log in with your account username, or register to set your own username and password.</string>
+    <string name="account_logged_in_as">Logged in as</string>
+    <string name="account_go_register">Don\'t have an account yet? Register</string>
+    <string name="hint_telegram_username">Telegram username</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_new_username">Choose a username</string>
+    <string name="register_hint">Registering sets your own username, password and contact email on the account you already purchased through the Telegram bot.</string>
+    <string name="error_bad_email">Enter a valid email address</string>
+    <string name="error_register_not_found">No purchased account was found for this Telegram username. Buy a plan from the bot first.</string>
+    <string name="error_username_taken">This username is already taken</string>
+    <string name="logout_toast">Logged out</string>
+
+    <!-- تب‌ها و ساختار V2Box -->
+    <string name="tab_home">Home</string>
+    <string name="tab_configs">Configs</string>
+    <string name="tab_settings">Settings</string>
+    <string name="section_device">DEVICE</string>
+    <string name="section_settings">SETTINGS</string>
+    <string name="section_community">COMMUNITY</string>
+    <string name="language_row">Language</string>
+    <string name="language_auto">Auto</string>
+    <string name="device_id">Device ID</string>
+    <string name="device_id_hint">Device ID will change in case of re-install</string>
+    <string name="support_row">Support</string>
+
+    <string name="subscription_info">Subscription Info</string>
+    <string name="subscription_expiry">Expires on</string>
+    <string name="subscription_traffic">Traffic quota</string>
+    <string name="subscription_configs_count">Configs</string>
+    <string name="subscription_unlimited">Unlimited</string>
+
+    <string name="tunnel_settings">Tunnel Settings</string>
+    <string name="tunnel_section_apps">Per-app tunneling</string>
+    <string name="tunnel_section_behavior">Behaviour</string>
+    <string name="tunnel_section_system">System</string>
+    <string name="tunnel_per_app_off">All apps</string>
+    <string name="tunnel_per_app_count">%1$d apps</string>
+    <string name="tunnel_ipv6">Enable IPv6</string>
+    <string name="tunnel_ipv6_hint">Route IPv6 traffic through the tunnel. Turn off if some sites fail to load.</string>
+
+    <string name="dns_settings">DNS Settings</string>
+    <string name="dns_section_provider">DNS provider</string>
+    <string name="dns_cloudflare">Cloudflare (1.1.1.1)</string>
+    <string name="dns_google">Google (8.8.8.8)</string>
+    <string name="dns_adguard">AdGuard (94.140.14.14)</string>
+    <string name="dns_custom">Custom</string>
+    <string name="dns_hint">The DNS server used inside the tunnel. Cloudflare is fastest for most users.</string>
+
+    <string name="route_settings">Route Settings</string>
+    <string name="route_section_mode">Routing mode</string>
+    <string name="route_mode_global">Global (everything through the tunnel)</string>
+    <string name="route_mode_bypass_iran">Bypass Iranian sites</string>
+    <string name="route_mode_hint">Bypass mode keeps Iranian sites and banking apps on your normal connection, which is faster and avoids blocks.</string>
+
+    <string name="subscription_settings">Subscription Settings</string>
+    <string name="subscription_profile_link">Profile / subscription link</string>
+    <string name="subscription_profile_link_hint">Paste your HermesVPN account ID, your subscription link, or any external subscription URL. All configs it contains will be imported.</string>
+    <string name="subscription_save_and_update">Save and update</string>
+    <string name="subscription_section_update">Updating</string>
+    <string name="subscription_update_now">Update now</string>
+    <string name="subscription_updated">Configs updated</string>
+    <string name="subscription_up_to_date">Already up to date</string>
+    <string name="subscription_auto_update">Auto-update on connect</string>
+    <string name="subscription_auto_update_hint">Fetch the newest configs each time you connect.</string>
+    <string name="subscription_last_update">Last updated</string>
+
+    <string name="speed_test">Speed Test</string>
+    <string name="speed_test_latency">Latency (ms)</string>
+    <string name="speed_test_download">Download (Mbps)</string>
+    <string name="speed_test_run_latency">Test latency</string>
+    <string name="speed_test_run_download">Test download speed</string>
+    <string name="speed_test_no_config">No config selected</string>
+    <string name="speed_test_hint">Latency measures how fast the server responds. The download test runs through your current connection — connect first to measure the tunnel itself.</string>
+
+    <!-- صفحه‌ی Configs -->
+    <string name="configs_scan_qr">Scan a QR code</string>
+    <string name="configs_scan_gallery">Gallery</string>
+    <string name="add_config_no_qr_in_image">No QR code found in that image</string>
+    <string name="configs_add">Add config</string>
+    <string name="configs_menu">Menu</string>
+    <string name="configs_favorites">Favourites</string>
+    <string name="configs_ping_all">Ping All</string>
+    <string name="configs_pinging">Testing…</string>
+    <string name="configs_empty">No configs yet.\n\nTap + to paste a link, or the QR icon to scan one. You can add as many as you like.</string>
+    <string name="sort_by_ping">Ping</string>
+    <string name="sort_by_name">Name</string>
+    <string name="group_best_ping">Best: %1$d ms</string>
+    <string name="group_no_info">No Information</string>
+    <string name="group_delete_all">Delete all in group</string>
+    <string name="group_delete_all_confirm">Delete every config in \"%1$s\"?</string>
+    <string name="ping_timeout">Timeout</string>
+    <string name="ping_unknown">Not tested</string>
+    <string name="action_rename">Rename</string>
+    <string name="action_share">Share</string>
+    <string name="action_delete">Delete</string>
+    <string name="delete_config_confirm">Delete \"%1$s\"?</string>
+    <string name="location_germany">Germany</string>
+    <string name="add_config_hint">vless:// link or subscription URL</string>
+    <string name="add_config_paste">Paste from clipboard</string>
+    <string name="add_menu_uri_clipboard">Import v2ray URI from clipboard</string>
+    <string name="add_menu_json_clipboard">Import v2ray JSON from clipboard</string>
+    <string name="add_menu_v2box_file">Import .v2box file</string>
+    <string name="add_menu_subscription">Add subscription</string>
+    <string name="add_menu_manual">Add manual config</string>
+    <string name="add_menu_update_all">Update all subscriptions</string>
+    <string name="add_config_clipboard_empty">Clipboard is empty</string>
+    <string name="add_config_not_json">This isn\'t a valid v2ray/xray JSON config</string>
+    <string name="add_config_json_added">Config imported from JSON</string>
+    <string name="add_config_file_pick">Pick a .v2box / config file</string>
+    <string name="subscription_name_hint">Name</string>
+    <string name="subscription_url_hint">Subscription URL</string>
+    <string name="subscription_added">Subscription added and updated</string>
+    <string name="manual_config_title_vless">Add VLESS config</string>
+    <string name="manual_config_title_trojan">Add Trojan config</string>
+    <string name="manual_config_title_shadowsocks">Add Shadowsocks config</string>
+    <string name="manual_config_title_socks">Add SOCKS config</string>
+    <string name="manual_hint_remark">Name (optional)</string>
+    <string name="manual_hint_address">Server address</string>
+    <string name="manual_hint_port">Port</string>
+    <string name="manual_hint_uuid">UUID</string>
+    <string name="manual_hint_password">Password</string>
+    <string name="manual_hint_method">Encryption method (e.g. aes-256-gcm)</string>
+    <string name="manual_hint_username">Username (optional)</string>
+    <string name="manual_config_missing_fields">Fill in address, port, and %1$s</string>
+    <string name="add_config_invalid">No valid config link found</string>
+    <string name="add_config_added">%1$d config(s) added</string>
+    <string name="add_config_added_skipped">%1$d added, %2$d already existed</string>
+    <string name="add_config_all_duplicates">These configs are already in your list</string>
+
+    <string name="profile_title">Profile</string>
+    <string name="profile_avatar">Profile picture</string>
+    <string name="profile_change_avatar">Change picture</string>
+    <string name="profile_avatar_failed">Could not read that image</string>
+    <string name="profile_section_details">Details</string>
+    <string name="profile_section_security">Security</string>
+    <string name="profile_display_name">Display name</string>
+    <string name="profile_new_password">New password</string>
+    <string name="profile_change_password">Change password</string>
+    <string name="profile_password_changed">Password changed</string>
+    <string name="hint_username_or_email">Telegram username or email</string>
+    <string name="login_hint">Already bought a plan? Log in with the username you registered, or your email.</string>
+    <string name="register_no_account">Haven\'t bought a plan yet? Buy one</string>
+    <string name="forgot_password_title">Forgot password</string>
+    <string name="forgot_password_hint">Enter your username, email, or Telegram username. A new password will be sent to your Telegram account.</string>
+    <string name="forgot_password_send">Send new password</string>
+    <string name="forgot_password_sent">If an account matches, a new password has just been sent to its Telegram account.</string>
+    <string name="forgot_password_open_bot">Open the Telegram bot</string>
+    <string name="error_fill_all_fields">Please fill in all fields</string>
+    <string name="error_password_too_short">Password must be at least 6 characters</string>
+    <string name="login_success_with_configs">Logged in — %1$d configs ready</string>
+    <!-- صفحه‌ی اصلی -->
+    <string name="home_current_location">Current Location</string>
+    <string name="home_store">Store</string>
+    <string name="label_download_speed">Download Speed</string>
+    <string name="label_upload_speed">Upload Speed</string>
+    <!-- ورود یک‌ضربه‌ای از ربات -->
+    <string name="deeplink_working_title">Activating your account…</string>
+    <string name="deeplink_working_body">Fetching your purchased account from the bot.</string>
+    <string name="deeplink_done_title">Ready to use</string>
+    <string name="deeplink_done_body">Account %1$s is now active in the app. Just press Connect.</string>
+    <string name="deeplink_failed_title">Could not activate</string>
+    <string name="deeplink_invalid_token">This activation link is no longer valid. Open the bot and tap “Get link again”.</string>
+    <string name="deeplink_no_token">This link has no activation code.</string>
+    <string name="deeplink_go_connect">Go to Connect</string>
+    <string name="deeplink_continue">Continue</string>
+    <string name="deeplink_retry">Try again</string>
+    <string name="deeplink_build">v%1$s · build %2$s</string>
+    <string name="deeplink_bad_payload">This link does not contain a usable config.</string>
+    <string name="tunnel_bypass_ir_apps">Keep Iranian apps outside the tunnel (banking, government, payment)</string>
+    <string name="tunnel_mux">Multiplexing — faster page loads, but can break Telegram</string>
+
+    <!-- به‌روزرسانی داخل اپ -->
+    <string name="update_channel">Updates</string>
+    <string name="update_notif_title">Version %1$s is ready</string>
+    <string name="update_notif_body">Tap to install</string>
+    <string name="update_checking">Checking…</string>
+    <string name="update_available_title">Version %1$s is ready</string>
+    <string name="update_default_notes">Speed improvements and bug fixes.</string>
+    <string name="update_none_title">You\'re up to date</string>
+    <string name="update_none_body">Version %1$s is the latest version.</string>
+    <string name="update_download">Download and install</string>
+    <string name="update_install">Install</string>
+    <string name="update_downloading">Downloading…</string>
+    <string name="update_progress">%1$d of %2$d MB</string>
+    <string name="update_installing">Installing…</string>
+    <string name="update_failed">Download failed.</string>
+    <string name="update_retry">Try again</string>
+    <string name="update_later">Later</string>
+    <string name="update_close">Close</string>
+    <string name="update_need_permission">Android needs permission to install.</string>
+    <string name="update_open_settings">Allow</string>
+    <string name="update_check_menu">Check for updates</string>
+    <string name="dev_promo_title">HermesVPN on all your devices</string>
+    <string name="dev_promo_sub">One account — your Android phone and Windows PC.</string>
+    <string name="dev_get_windows">Get the Windows app</string>
+    <string name="dev_share">Invite friends</string>
+    <string name="dev_screen">Devices &amp; sharing</string>
+    <string name="dev_windows_title">Windows</string>
+    <string name="dev_windows_hint">Install on Windows 10/11, then sign in with the same username and password — your configs come along. Send the link to your computer:</string>
+    <string name="dev_android_title">Android (this phone)</string>
+    <string name="dev_installed">Installed · version %1$s</string>
+    <string name="dev_send_to_pc">Send link to my computer</string>
+    <string name="dev_copy">Copy link</string>
+    <string name="dev_share_title">Share HermesVPN with friends</string>
+    <string name="dev_share_hint">Send them the download link — there is a free trial too.</string>
+    <string name="dev_share_telegram">Telegram</string>
+    <string name="dev_share_whatsapp">WhatsApp</string>
+    <string name="dev_share_more">More…</string>
+    <string name="dev_share_text">I use HermesVPN — fast, private and always on 🚀\n\n📱 Android: %1$s\n💻 Windows: %2$s\n\n🛒 Buy or try free: %3$s</string>
+    <string name="price_toman">%1$s Toman</string>
+    <string name="purchase_card_details">Card number: %1$s\nName: %2$s\nAmount: %3$s Toman</string>
+    <string name="vpn_notif_connected">Connected</string>
+    <string name="tunnel_summary_none">Not connected yet — connect once to see the status here.</string>
+    <string name="upd_banner">Version %1$s is available</string>
+    <string name="upd_banner_btn">Update</string>
+    <string name="upd_card_title">Version %1$s is ready</string>
+    <string name="upd_card_sub">You have %1$s — tap to install the new version.</string>
+    <string name="sub_chip">Sub link</string>
+    <string name="sub_hint">Paste a subscription (sub) link — HermesVPN or any other provider. All its configs are imported and refreshed with “Update”.</string>
+    <string name="tunnel_err_invalid">This is not a valid emergency route file or link</string>
+    <string name="tunnel_err_foreign">This file was not made by HermesVPN</string>
+    <string name="tunnel_err_expired">This file has expired; get a new one from support</string>
+    <string name="tunnel_no_share">Emergency routes cannot be shared; everyone gets their own file from support</string>
+    <string name="tunnel_connect_failed">The emergency route did not connect; try again shortly or pick another route</string>
+</resources>

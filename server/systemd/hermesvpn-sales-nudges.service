@@ -1,0 +1,5 @@
+[Unit]
+Description=HermesVPN sales nudges (renewal reminders + abandoned orders) via the sales bot
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /usr/local/bin/hermesvpn-sales-nudges.py

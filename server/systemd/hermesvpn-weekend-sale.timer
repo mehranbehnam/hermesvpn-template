@@ -1,0 +1,7 @@
+[Unit]
+Description=Thursday 01:00 Tehran weekend festival start (48h)
+[Timer]
+OnCalendar=Wed *-*-* 21:30:00 UTC
+Persistent=true
+[Install]
+WantedBy=timers.target

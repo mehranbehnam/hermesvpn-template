@@ -1,0 +1,18 @@
+[Unit]
+Description=HermesVPN public SOCKS5 for Telegram (two accounts)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/x-ui/bin/xray-linux-arm64 run -c /etc/hermes-tgsocks/config.json
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+# بدون نیاز به root — فقط پورت بالا باز می‌کند
+User=nobody
+Group=nogroup
+
+[Install]
+WantedBy=multi-user.target
